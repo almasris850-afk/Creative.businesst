@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>السيستم الشامل | طريقك إلى أول 1000$</title>
+  <!-- Google Fonts - خط عربي عصري -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (مجاني) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #f9fafc;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* الألوان الرئيسية */
+    :root {
+      --primary: #8b5cf6;
+      --primary-dark: #7c3aed;
+      --secondary: #f59e0b;
+      --dark: #0f172a;
+      --light: #f8fafc;
+      --gray: #e2e8f0;
+      --success: #10b981;
+      --gradient: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    }
+
+    /* العناوين */
+    h1, h2, h3 {
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: 0;
+      width: 70px;
+      height: 4px;
+      background: var(--gradient);
+      border-radius: 2px;
+    }
+
+    /* الأزرار */
+    .btn {
+      display: inline-block;
+      background: var(--gradient);
+      color: white;
+      font-weight: 700;
+      padding: 15px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.3rem;
+      box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px rgba(139, 92, 246, 0.4);
+    }
+
+    .btn-small {
+      font-size: 1.1rem;
+      padding: 12px 30px;
+    }
+
+    /* الهيدر مع الصورة */
+    .hero {
+      padding: 60px 0 40px;
+      background: white;
+      border-bottom: 1px solid var(--gray);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #475569;
+      margin-bottom: 20px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+      border: 5px solid white;
+    }
+
+    .badge {
+      background: var(--secondary);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    /* قائمة المميزات */
+    .features-mini {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .feature-mini-item {
+      background: #f1f5f9;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feature-mini-item i {
+      color: var(--primary);
+    }
+
+    /* قسم السيستم الشامل */
+    .system-section {
+      background: white;
+      padding: 60px 0;
+    }
+
+    .highlight-box {
+      background: var(--gradient);
+      color: white;
+      padding: 30px;
+      border-radius: 30px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .highlight-box h3 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    /* بطاقات الكورسات */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
+    }
+
+    .course-card {
+      background: white;
+      border-radius: 20px;
+      padding: 25px 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+      border: 1px solid var(--gray);
+      transition: 0.3s;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.05);
+      border-color: var(--primary);
+    }
+
+    .course-icon {
+      background: var(--gradient);
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .course-icon i {
+      font-size: 2rem;
+      color: white;
+    }
+
+    .course-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    .course-card ul {
+      list-style: none;
+    }
+
+    .course-card li {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+    }
+
+    .course-card li i {
+      color: var(--success);
+      font-size: 0.9rem;
+    }
+
+    /* قسم الهدايا */
+    .gifts-section {
+      background: #f1f5f9;
+      padding: 60px 0;
+    }
+
+    .gifts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .gift-item {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.02);
+      border: 1px solid #dee2e9;
+    }
+
+    .gift-icon {
+      background: #eae5ff;
+      width: 55px;
+      height: 55px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      color: var(--primary);
+    }
+
+    .gift-text {
+      font-weight: 600;
+      flex: 1;
+    }
+
+    /* العداد */
+    .countdown-section {
+      background: var(--dark);
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .countdown-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .discount-badge {
+      background: #ef4444;
+      color: white;
+      padding: 5px 20px;
+      border-radius: 40px;
+      font-weight: 700;
+      display: inline-block;
+      margin: 10px 0;
+    }
+
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 30px 0 20px;
+    }
+
+    .time-box {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(5px);
+      padding: 15px 25px;
+      border-radius: 15px;
+      min-width: 100px;
+    }
+
+    .time-number {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .time-label {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .price-box {
+      margin: 20px 0;
+    }
+
+    .old-price {
+      font-size: 1.5rem;
+      text-decoration: line-through;
+      opacity: 0.7;
+    }
+
+    .new-price {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--secondary);
+      margin-right: 15px;
+    }
+
+    /* رسالة التحفيز الإضافية */
+    .motivation-message {
+      background: rgba(255,255,255,0.08);
+      padding: 15px 20px;
+      border-radius: 60px;
+      margin: 25px auto 20px;
+      max-width: 750px;
+      font-size: 1.2rem;
+      border: 1px dashed var(--secondary);
+      color: #f8fafc;
+      line-height: 1.7;
+    }
+
+    .motivation-message i {
+      color: var(--secondary);
+      margin-left: 8px;
+    }
+
+    /* التقييمات */
+    .testimonials {
+      padding: 60px 0;
+      background: white;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .testimonial-card {
+      background: #f8fafc;
+      padding: 25px;
+      border-radius: 20px;
+      border: 1px solid var(--gray);
+    }
+
+    .testimonial-stars {
+      color: #fbbf24;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-text {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .author-avatar {
+      background: var(--gradient);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+    }
+
+    .author-name {
+      font-weight: 700;
+    }
+
+    /* قسم الأسئلة الشائعة (FAQ) */
+    .faq-section {
+      background: #f1f5f9;
+      padding: 60px 0;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.02);
+      border: 1px solid var(--gray);
+    }
+
+    .faq-question {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .faq-question i {
+      font-size: 2rem;
+      color: var(--primary);
+      background: #eae5ff;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .faq-question h3 {
+      font-size: 1.3rem;
+      margin: 0;
+    }
+
+    .faq-answer {
+      padding-right: 65px; /* محاذاة مع الأيقونة */
+      color: #334155;
+      font-size: 1.05rem;
+    }
+
+    .faq-answer ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .faq-answer li {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .faq-answer li i {
+      color: var(--primary);
+      font-size: 0.8rem;
+    }
+
+    /* تنسيق معرف التلغرام */
+    .telegram-handle {
+      display: inline-block;
+      background: #0088cc;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 40px;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+    /* زر الشراء الثابت */
+    .sticky-buy {
+      position: sticky;
+      bottom: 20px;
+      text-align: center;
+      z-index: 100;
+      margin-top: 20px;
+      pointer-events: none;
+    }
+
+    .sticky-buy .btn {
+      pointer-events: auto;
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.5);
+      animation: pulse 2s infinite;
+    }
+
+    /* تلميح الشراء */
+    .buy-hint {
+      font-size: 0.9rem;
+      margin-top: 8px;
+      color: #cbd5e1;
+    }
+
+    .buy-hint i {
+      color: var(--secondary);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    /* تذييل */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* responsive */
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.7rem; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-image { order: -1; }
+      .countdown-timer { gap: 10px; }
+      .time-box { padding: 10px 15px; min-width: 70px; }
+      .time-number { font-size: 2rem; }
+      .faq-answer { padding-right: 0; }
+    }
+  </style>
+</head>
+<body>
+  <!-- القسم الرئيسي مع الصورة -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="badge"><i class="fas fa-rocket"></i> فرصة محدودة</span>
+        <h1>مستعد تحول جوالك من أداة تسلية إلى ماكينة أرباح شهرية؟ 💸📱</h1>
+        <p>لايهم إذا عندك بزنس فعلي أو مجرد فكرة… هذه الخطة تناسب أي شخص يريد يبدأ من الصفر. هذه دورة عملية حديثة ليست وعود وردية ولا كلام فارغ الحل أبسط مما تتخيل؟ 💡</p>
+        <div class="features-mini">
+          <div class="feature-mini-item"><i class="fas fa-check-circle"></i> خطة واضحة</div>
+          <div class="feature-mini-item"><i class="fas fa-mobile-alt"></i> الجوال الموجود في يدك</div>
+          <div class="feature-mini-item"><i class="fas fa-globe"></i> إنترنت</div>
+          <div class="feature-mini-item"><i class="fas fa-clock"></i> ساعتين يومياً</div>
+        </div>
+        <p style="font-weight: 600; font-size: 1.3rem;">✅️ أنت مو قدام كورس.. أنت قدام سيستم جاهز يختصر عليك شهور: تدريب+ أدوات+ مواقع+ ملفات جاهزة+ منتج رقمي+ حقوق إعادة البيع و الربح 100% لك.</p>
+      </div>
+      <div class="hero-image">
+        <!-- الصورة من الرابط المطلوب -->
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg7hTs4NaypvHhHeR9cQBnxa9lUZB393eOXLFU2Fj2UZZe4WYDErVoFg3isvtpBJfTVWnuW7Om-bMYiChqRko57bdUx31QnyKTjn48fQGksWyjaaVqNeMXwNWgOA0wmSIsxKc38Wu6_nDqnL-jzzh5ZYneTcYbgRciKP4VM_LdJh4Y5WpdcGrIz_scCdzIq/s1536/%D8%B7%D8%B1%D9%8A%D9%82%D9%83%20%D8%A7%D9%84%D9%89%20%D8%A3%D9%88%D9%84%201000$_20260227_060200_%D9%A0%D9%A0%D9%A0%D9%A0.png" alt="السيستم الشامل - طريقك إلى أول 1000$" onerror="this.src='https://via.placeholder.com/600x400/8b5cf6/ffffff?text=%D8%A7%D9%84%D8%B3%D9%8A%D8%B3%D8%AA%D9%85+%D8%A7%D9%84%D8%B4%D8%A7%D9%85%D9%84';">
+      </div>
+    </div>
+  </section>
+
+  <!-- نبذة: كل خطوة موضوعة للمبتدئين -->
+  <section class="system-section">
+    <div class="container">
+      <div class="highlight-box">
+        <h3>كل خطوة موضوعة للمبتدئين ولأي شخص يبغى يبدأ بدون خبرة و بدون رأس مال</h3>
+        <p style="font-size: 1.3rem;">ثلاث كورسات عملية في هذا السيستم تشمل:</p>
+      </div>
+
+      <!-- الكورسات الثلاثة (تم حذف الكورس الثالث) -->
+      <div class="courses-grid">
+        <!-- كورس 1 -->
+        <div class="course-card">
+          <div class="course-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>1️⃣ كورس تأسيس البزنس الرقمي</h3>
+          <ul>
+            <li><i class="fas fa-check"></i> إنشاء منتجك الرقمي الأول</li>
+            <li><i class="fas fa-check"></i> بناء صفحة هبوط تبيع أوتوماتيكياً 💻</li>
+            <li><i class="fas fa-check"></i> الذكاء الاصطناعي لأتمتة 80% من عملك 🤖</li>
+            <li><i class="fas fa-check"></i> استراتيجيات إنستغرام لزيادة المبيعات 📈</li>
+            <li><i class="fas fa-check"></i> صناعة فيديوهات جذابة بدون إظهار وجهك 🎬</li>
+          </ul>
+        </div>
+        <!-- كورس 2 -->
+        <div class="course-card">
+          <div class="course-icon"><i class="fab fa-instagram"></i></div>
+          <h3>2️⃣ كورس احتراف إنستغرام</h3>
+          <ul>
+            <li><i class="fas fa-check"></i> تصميم هوية بصرية لا تنسى 🎨</li>
+            <li><i class="fas fa-check"></i> نصوص مقنعة تحول المتابعين لعملاء 💬</li>
+            <li><i class="fas fa-check"></i> نمو عضوي بدون إعلانات 🚫📢</li>
+            <li><i class="fas fa-check"></i> تحليل الأداء لضمان مبيعات متزايدة 📊</li>
+            <li><i class="fas fa-check"></i> قوالب محتوى تفجر مبيعاتك 💥</li>
+          </ul>
+        </div>
+        <!-- كورس 4 (كان رابعاً والآن أصبح ثالثاً) -->
+        <div class="course-card">
+          <div class="course-icon"><i class="fas fa-book"></i></div>
+          <h3>3️⃣ كورس إنشاء كتاب إلكتروني بالذكاء الاصطناعي</h3>
+          <ul>
+            <li><i class="fas fa-check"></i> أفكار مطلوبة في السوق 💡</li>
+            <li><i class="fas fa-check"></i> كتابة سريعة بالذكاء الاصطناعي ⏱️</li>
+            <li><i class="fas fa-check"></i> تصميم احترافي يجذب المشترين 🎨</li>
+            <li><i class="fas fa-check"></i> تسويق مجاني 100% 🆓💵</li>
+            <li><i class="fas fa-check"></i> دخل يصل إلى 1000$ في أقل من شهر</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم الهدايا القيمة (تم استبدال "هوكات" بـ "Hook") -->
+  <section class="gifts-section">
+    <div class="container">
+      <h2>🎁 هدايا قيمة ستضمن لك النجاح إن شاء الله</h2>
+      <div class="gifts-grid">
+        <div class="gift-item"><span class="gift-icon"><i class="fas fa-book-open"></i></span><span class="gift-text">مكتبة كتب رقمية جاهزة للبدء من اليوم الأول 📚</span></div>
+        <div class="gift-item"><span class="gift-icon"><i class="fas fa-heading"></i></span><span class="gift-text">أكثر من 100 عنوان محتوى (Hook) ✍️</span></div>
+        <div class="gift-item"><span class="gift-icon"><i class="fas fa-lightbulb"></i></span><span class="gift-text">بنك أفكار لـ 6 أشهر - إبداع يومي بدون جهد 💡🔄</span></div>
+        <div class="gift-item"><span class="gift-icon"><i class="fas fa-box-open"></i></span><span class="gift-text">منتج رقمي جاهز للبيع من اليوم الأول</span></div>
+        <div class="gift-item"><span class="gift-icon"><i class="fas fa-video"></i></span><span class="gift-text">مكتبة 100,000 فيديو جاهز للنشر (ريلز + إعلانات) 🎬</span></div>
+        <div class="gift-item"><span class="gift-icon"><i class="fas fa-database"></i></span><span class="gift-text">قاعدة 15 مليون منتج رقمي بمحتوى أجنبي جاهز 📦</span></div>
+        <div class="gift-item"><span class="gift-icon"><i class="fas fa-tools"></i></span><span class="gift-text">⚡️ ملفات وأدوات احترافية + مواقع تسهل التطبيق</span></div>
+        <div class="gift-item"><span class="gift-icon"><i class="fas fa-headset"></i></span><span class="gift-text">🎁 متابعة ودعم دائم - لست وحدك 🤝</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- عداد زمني + السعر + رسالة التحفيز -->
+  <section class="countdown-section" id="countdown">
+    <div class="container">
+      <div class="discount-badge">🔥 عرض خاص لفترة محدودة</div>
+      <div class="countdown-title">العرض ينتهي خلال</div>
+      <div class="countdown-timer" id="timer">
+        <div class="time-box"><span class="time-number" id="days">5</span><span class="time-label">يوم</span></div>
+        <div class="time-box"><span class="time-number" id="hours">00</span><span class="time-label">ساعة</span></div>
+        <div class="time-box"><span class="time-number" id="minutes">00</span><span class="time-label">دقيقة</span></div>
+        <div class="time-box"><span class="time-number" id="seconds">00</span><span class="time-label">ثانية</span></div>
+      </div>
+      <div class="price-box">
+        <span class="old-price">500$</span>
+        <span class="new-price">19$</span>
+        <!-- تم إزالة نسبة الخصم -->
+      </div>
+      <!-- الرسالة التحفيزية -->
+      <div class="motivation-message">
+        <i class="fas fa-bolt"></i> جاهز تبدأ رحلتك مع كورس الربح من الإنستجرام أوتوميشن؟ 
+        العرض الحالي ما زال متاحاً _ لكن السعر سيعود إلى قيمته الأساسية عند انتهاء العد التنازلي أو اكتمال عدد المشتركين
+      </div>
+      <!-- زر الشراء مع توضيح إضافي -->
+      <a href="https://www.tekrams.com/product/645bb0ab-6e3d-443b-a5f2-4908415a354d" class="btn" target="_blank">🚀 اشترك الآن بسعر 19$</a>
+      <div class="buy-hint"><i class="fas fa-hand-point-left"></i> اضغط على الزر للشراء بسهولة وأمان</div>
+    </div>
+  </section>
+
+  <!-- التقييمات الإيجابية (أسماء فقط بدون دول) -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>📢 ماذا قال المشتركين عن السيستم؟</h2>
+      <div class="testimonials-grid">
+        <!-- تقييم 1: أحمد -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <div class="testimonial-text">"صدقًا السيستم هذا غير حياتي، بدأت بدون خبرة وفي أول شهر حققت 870$! الهدايا خرافية والمحتوى تطبيقي 100%"</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">أ</div>
+            <div class="author-name">أحمد</div>
+          </div>
+        </div>
+        <!-- تقييم 2: خالد -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <div class="testimonial-text">"والله كورس احتراف إنستغرام علمني كيف أحول المتابعين لعملاء بدون إعلانات. أنصح كل مبتدأ يبدأ بهالسيستم"</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">خ</div>
+            <div class="author-name">خالد</div>
+          </div>
+        </div>
+        <!-- تقييم 3: محمد -->
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <div class="testimonial-text">"الكتاب الإلكتروني الي سويناه بالذكاء الاصطناعي جاب لي أول 1000$ في 3 أسابيع. شكراً على الملفات الجاهزة!"</div>
+          <div class="testimonial-author">
+            <div class="author-avatar">م</div>
+            <div class="author-name">محمد</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- قسم الأسئلة الشائعة (FAQ) -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>❓ الأسئلة الشائعة</h2>
+      <div class="faq-grid">
+        <!-- السؤال 1 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h3>١) كيف يمكنني أن أدفع لشراء هذا التدريب؟</h3>
+          </div>
+          <div class="faq-answer">
+            <p>طرق الدفع المتوفرة حالياً:</p>
+            <ul>
+              <li><i class="fas fa-check"></i> PayPal</li>
+              <li><i class="fas fa-check"></i> بطاقات الائتمان أو السحب Visa/MasterCard</li>
+            </ul>
+            <p>أو عن طريق بينانس (Binance) أرسل لي كلمة "سيستم" على الخاص في تلغرام <span class="telegram-handle"><i class="fab fa-telegram"></i> @y_36ousf</span></p>
+          </div>
+        </div>
+
+        <!-- السؤال 2 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h3>٢) كيف سأدخل للتدريب عند شراؤه؟</h3>
+          </div>
+          <div class="faq-answer">
+            <p>بمجرد شرائك .. ستدخل منطقة الأعضاء التي بها كافة فيديوهات التدريب.</p>
+          </div>
+        </div>
+
+        <!-- السؤال 3 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h3>٣) هل هناك دعم فني مع التدريب؟</h3>
+          </div>
+          <div class="faq-answer">
+            <p>أكيد هذا شيء مهم جداً بالنسبة لك.. لو أردت السؤال عن أي شيء فأنا سأرد عليك بنفسي.</p>
+          </div>
+        </div>
+
+        <!-- السؤال 4 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h3>٤) لماذا تقدم التدريب بهذا السعر البسيط ، ما السر؟</h3>
+          </div>
+          <div class="faq-answer">
+            <p>بصراحة لا يوجد سر ولا شيء. فقط كل ما في الأمر أني أريد جذب أشخاص مهتمين يثقوا فيّ و يتابعوني و يجدوا مني قيمة، وفعلياً هذا التحدي قيمته عالية جداً مقارنة بالمحتوى الموجود.</p>
+          </div>
+        </div>
+
+        <!-- السؤال 5 -->
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fas fa-question-circle"></i>
+            <h3>٥) كيف أعرف إن كان هذا البرنامج مناسب لي أم لا؟!</h3>
+          </div>
+          <div class="faq-answer">
+            <p>إذا كنت طالب أو موظف أو تنوي إنشاء بيزنس أونلاين أو أنشأت بالفعل لكن لم تحقق نتائج..الخ، إذن إن شاء الله هذا الكورس مناسب لك.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- زر شراء ثابت أسفل الشاشة مع توضيح -->
+  <div class="sticky-buy">
+    <a href="https://www.tekrams.com/product/645bb0ab-6e3d-443b-a5f2-4908415a354d" class="btn btn-small" target="_blank"><i class="fas fa-shopping-cart"></i> احجز مكانك الآن ب 19$</a>
+    <div class="buy-hint" style="color:#e2e8f0;">الشراء آمن ومضمون</div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 السيستم الشامل - جميع الحقوق محفوظة. طريقك إلى أول 1000$ يبدأ من هنا.</p>
+    </div>
+  </footer>
+
+  <script>
+    // عداد تنازلي لمدة 5 أيام من لحظة فتح الصفحة
+    function startCountdown(days = 5) {
+      // نحدد وقت الانتهاء: الآن + 5 أيام
+      const now = new Date().getTime();
+      const countdownEnd = now + (days * 24 * 60 * 60 * 1000);
+
+      function updateTimer() {
+        const current = new Date().getTime();
+        const distance = countdownEnd - current;
+
+        if (distance < 0) {
+          document.getElementById('days').innerText = '0';
+          document.getElementById('hours').innerText = '00';
+          document.getElementById('minutes').innerText = '00';
+          document.getElementById('seconds').innerText = '00';
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById('days').innerText = days;
+        document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+      }
+
+      updateTimer(); // تشغيل فوراً
+      setInterval(updateTimer, 1000); // كل ثانية
+    }
+
+    window.onload = function() {
+      startCountdown(5); // 5 أيام عد تنازلي
+    };
+  </script>
+</body>
+</html>
